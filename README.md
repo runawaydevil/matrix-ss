@@ -5,7 +5,7 @@
 [![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20Unix%20%7C%20macOS-lightgrey.svg)](https://www.linux.org/)
 [![Terminal](https://img.shields.io/badge/Terminal-curses%20compatible-orange.svg)](https://docs.python.org/3/library/curses.html)
 [![Status](https://img.shields.io/badge/Status-Stable-brightgreen.svg)](https://github.com/yourusername/matrix-ss)
-[![Versions](https://img.shields.io/badge/Versions-3%20Variants-blue.svg)](README.md#versions)
+[![Versions](https://img.shields.io/badge/Versions-4%20Variants-blue.svg)](README.md#versions)
 
 A collection of terminal-based Matrix-style screen savers that simulate the iconic "digital rain" effect from the Matrix movies. Multiple color variants available for different moods and occasions.
 
@@ -15,10 +15,10 @@ A collection of terminal-based Matrix-style screen savers that simulate the icon
 [![Animation](https://img.shields.io/badge/Animation-20%20FPS-blue.svg)](https://en.wikipedia.org/wiki/Frame_rate)
 [![Controls](https://img.shields.io/badge/Controls-Simple%20%28q%20to%20quit%29-orange.svg)](README.md#controls)
 [![Performance](https://img.shields.io/badge/Performance-Lightweight%20%26%20Efficient-green.svg)](README.md#technical-details)
-[![Variants](https://img.shields.io/badge/Variants-3%20Color%20Themes-purple.svg)](README.md#versions)
+[![Variants](https://img.shields.io/badge/Variants-4%20Color%20Themes-purple.svg)](README.md#versions)
 
 - 🌟 Authentic Matrix-style digital rain effect
-- 🎨 Multiple color variants (Green, Red+Green, Rainbow)
+- 🎨 Multiple color variants (Green, Red+Green, Rainbow, System Monitor)
 - ⚡ Smooth animation (~20 FPS)
 - ⌨️ Simple controls (press 'q' to quit)
 - 🐧 Linux/Unix compatible
@@ -29,12 +29,25 @@ A collection of terminal-based Matrix-style screen savers that simulate the icon
 [![Python Version](https://img.shields.io/badge/Python-3.x+-blue.svg)](https://www.python.org/downloads/)
 [![OS](https://img.shields.io/badge/OS-Linux%20%7C%20Unix%20%7C%20macOS-lightgrey.svg)](https://www.linux.org/)
 [![Library](https://img.shields.io/badge/Library-curses-orange.svg)](https://docs.python.org/3/library/curses.html)
+[![Dependencies](https://img.shields.io/badge/Dependencies-psutil%20%28optional%29-yellow.svg)](https://pypi.org/project/psutil/)
 
 - Python 3.x
 - Linux/Unix terminal
 - `curses` library (usually included with Python)
+- `psutil` library (for system monitoring - optional, only needed for `matrix_system.py`)
 
 ## Installation
+
+### Dependencies Installation
+For the system monitoring version (`matrix_system.py`), you'll need to install the `psutil` library:
+
+```bash
+# Install psutil for system monitoring
+pip install psutil
+
+# Or install from requirements.txt
+pip install -r requirements.txt
+```
 
 ### Method 1: Direct Download
 ```bash
@@ -43,7 +56,7 @@ git clone <repository-url>
 cd matrix-ss
 
 # Make all scripts executable
-chmod +x matrix.py matrix_red.py matrix_rainbow.py
+chmod +x matrix.py matrix_red.py matrix_rainbow.py matrix_system.py
 ```
 
 ### Method 2: Manual Setup
@@ -52,9 +65,10 @@ chmod +x matrix.py matrix_red.py matrix_rainbow.py
 wget <matrix.py-url>
 wget <matrix_red.py-url>
 wget <matrix_rainbow.py-url>
+wget <matrix_system.py-url>
 
 # Make executable
-chmod +x matrix.py matrix_red.py matrix_rainbow.py
+chmod +x matrix.py matrix_red.py matrix_rainbow.py matrix_system.py
 ```
 
 ## Usage
@@ -69,6 +83,9 @@ python3 matrix_red.py
 
 # Rainbow Matrix (all colors)
 python3 matrix_rainbow.py
+
+# System Monitor Matrix (with system info)
+python3 matrix_system.py
 ```
 
 ### Alternative Methods
@@ -77,11 +94,13 @@ python3 matrix_rainbow.py
 ./matrix.py
 ./matrix_red.py
 ./matrix_rainbow.py
+./matrix_system.py
 
 # Or with python directly
 python matrix.py
 python matrix_red.py
 python matrix_rainbow.py
+python matrix_system.py
 ```
 
 ### Controls
@@ -128,6 +147,34 @@ python3 matrix_rainbow.py
 - ✨ Vibrant and eye-catching
 - 🎪 Great for demonstrations
 
+### 🖥️ System Monitor Matrix (`matrix_system.py`)
+Advanced version that displays real-time system information in the center while Matrix rain falls around it.
+
+```bash
+# Install dependencies first
+pip install -r requirements.txt
+
+# Run the system monitor
+python3 matrix_system.py
+```
+
+**Features:**
+- 🖥️ Real-time system monitoring (CPU, Memory, Disk, IP, Time, Date, User, Load)
+- 🔴 System info displayed in red at center
+- 🟢 Matrix rain falls around the information panel
+- ⏰ Updates every second
+- 🎯 Perfect for system administrators and monitoring
+
+**System Information Displayed:**
+- CPU Usage (%)
+- Memory Usage (%)
+- Disk Usage (%)
+- IP Address
+- Current Time
+- Current Date
+- Username
+- System Load (Linux)
+
 ### Version Comparison
 
 | Version | Colors | Effect | Best For |
@@ -135,6 +182,7 @@ python3 matrix_rainbow.py
 | `matrix.py` | Green only | Classic Matrix | Nostalgia, authentic experience |
 | `matrix_red.py` | Green + Red | Dramatic | Intense moments, alerts |
 | `matrix_rainbow.py` | 7 rainbow colors | Festive | Celebrations, demonstrations |
+| `matrix_system.py` | Green + Red + Yellow | System Monitor | System administration, monitoring |
 
 ## How It Works
 
