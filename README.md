@@ -5,8 +5,9 @@
 [![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20Unix%20%7C%20macOS-lightgrey.svg)](https://www.linux.org/)
 [![Terminal](https://img.shields.io/badge/Terminal-curses%20compatible-orange.svg)](https://docs.python.org/3/library/curses.html)
 [![Status](https://img.shields.io/badge/Status-Stable-brightgreen.svg)](https://github.com/yourusername/matrix-ss)
+[![Versions](https://img.shields.io/badge/Versions-3%20Variants-blue.svg)](README.md#versions)
 
-A terminal-based Matrix-style screen saver that simulates the iconic "digital rain" effect from the Matrix movies. This Python script creates falling green characters in your terminal, providing a nostalgic and visually appealing screen saver experience.
+A collection of terminal-based Matrix-style screen savers that simulate the iconic "digital rain" effect from the Matrix movies. Multiple color variants available for different moods and occasions.
 
 ## Features
 
@@ -14,9 +15,10 @@ A terminal-based Matrix-style screen saver that simulates the iconic "digital ra
 [![Animation](https://img.shields.io/badge/Animation-20%20FPS-blue.svg)](https://en.wikipedia.org/wiki/Frame_rate)
 [![Controls](https://img.shields.io/badge/Controls-Simple%20%28q%20to%20quit%29-orange.svg)](README.md#controls)
 [![Performance](https://img.shields.io/badge/Performance-Lightweight%20%26%20Efficient-green.svg)](README.md#technical-details)
+[![Variants](https://img.shields.io/badge/Variants-3%20Color%20Themes-purple.svg)](README.md#versions)
 
 - 🌟 Authentic Matrix-style digital rain effect
-- 🎨 Green text on terminal background
+- 🎨 Multiple color variants (Green, Red+Green, Rainbow)
 - ⚡ Smooth animation (~20 FPS)
 - ⌨️ Simple controls (press 'q' to quit)
 - 🐧 Linux/Unix compatible
@@ -40,38 +42,99 @@ A terminal-based Matrix-style screen saver that simulates the iconic "digital ra
 git clone <repository-url>
 cd matrix-ss
 
-# Make the script executable
-chmod +x matrix.py
+# Make all scripts executable
+chmod +x matrix.py matrix_red.py matrix_rainbow.py
 ```
 
 ### Method 2: Manual Setup
 ```bash
-# Download matrix.py to your desired location
+# Download all scripts to your desired location
 wget <matrix.py-url>
+wget <matrix_red.py-url>
+wget <matrix_rainbow.py-url>
 
 # Make executable
-chmod +x matrix.py
+chmod +x matrix.py matrix_red.py matrix_rainbow.py
 ```
 
 ## Usage
 
 ### Basic Usage
 ```bash
+# Classic Matrix (green only)
 python3 matrix.py
+
+# Dramatic Matrix (green + red)
+python3 matrix_red.py
+
+# Rainbow Matrix (all colors)
+python3 matrix_rainbow.py
 ```
 
 ### Alternative Methods
 ```bash
 # If made executable
 ./matrix.py
+./matrix_red.py
+./matrix_rainbow.py
 
 # Or with python directly
 python matrix.py
+python matrix_red.py
+python matrix_rainbow.py
 ```
 
 ### Controls
 - **Press 'q'** to quit the screen saver
 - **Ctrl+C** to force exit
+
+## Versions
+
+### 🟢 Classic Matrix (`matrix.py`)
+The original Matrix screen saver with authentic green digital rain effect.
+
+```bash
+python3 matrix.py
+```
+
+**Features:**
+- 🌟 Authentic Matrix movie experience
+- 🟢 Green characters only
+- 🎬 Nostalgic classic look
+
+### 🔴 Dramatic Matrix (`matrix_red.py`)
+Enhanced version with red characters mixed with green for a more dramatic effect.
+
+```bash
+python3 matrix_red.py
+```
+
+**Features:**
+- 🟢 80% green characters
+- 🔴 20% red characters
+- ⚡ Dramatic visual impact
+- 🎭 Perfect for intense moments
+
+### 🌈 Rainbow Matrix (`matrix_rainbow.py`)
+Vibrant rainbow version with all colors of the spectrum for festive occasions.
+
+```bash
+python3 matrix_rainbow.py
+```
+
+**Features:**
+- 🌈 7 rainbow colors (Red, Yellow, Green, Cyan, Blue, Magenta, White)
+- 🎉 Perfect for celebrations and events
+- ✨ Vibrant and eye-catching
+- 🎪 Great for demonstrations
+
+### Version Comparison
+
+| Version | Colors | Effect | Best For |
+|---------|--------|--------|----------|
+| `matrix.py` | Green only | Classic Matrix | Nostalgia, authentic experience |
+| `matrix_red.py` | Green + Red | Dramatic | Intense moments, alerts |
+| `matrix_rainbow.py` | 7 rainbow colors | Festive | Celebrations, demonstrations |
 
 ## How It Works
 
@@ -129,11 +192,13 @@ The screen saver creates a full-screen terminal animation where:
 
 ## Customization
 
-You can modify the script to change:
+You can modify any of the scripts to change:
 - **Speed**: Adjust `time.sleep(0.05)` value
-- **Colors**: Modify `curses.init_pair(1, curses.COLOR_GREEN, -1)`
+- **Colors**: Modify the color pairs in each script
 - **Characters**: Change the range in `random.randint(33, 126)`
 - **Frame rate**: Modify the `timeout(100)` value
+- **Color distribution**: Adjust the probability ratios in `matrix_red.py`
+- **Rainbow colors**: Add/remove colors from the `rainbow_colors` list in `matrix_rainbow.py`
 
 ## License
 
