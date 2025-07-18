@@ -1,1 +1,16 @@
-psutil>=5.8.0 
+psutil>=5.8.0
+
+# Optional dependencies for enhanced features
+# Uncomment the lines below for specific screensaver features
+
+# Audio libraries for matrix_music.py (choose one):
+# pyaudio>=0.2.11        # Primary audio library (requires system audio dev packages)
+# sounddevice>=0.4.0     # Alternative audio library (easier installation)
+# numpy>=1.21.0          # For audio signal processing
+
+# Network and API libraries for connected screensavers:
+# requests>=2.25.0       # For API calls (matrix_crypto.py, matrix_weather.py)
+# urllib3>=1.26.0        # HTTP library for network requests
+
+# Additional processing libraries (optional):
+# scipy>=1.7.0           # For advanced audio analysis 
